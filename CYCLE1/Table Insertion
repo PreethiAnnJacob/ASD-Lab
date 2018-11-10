@@ -1,0 +1,797 @@
+insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno');
+insert into director values('&directorno','&directorName');
+insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+insert into actor values('&actorno','&actorname');
+insert into role values('&actorno','&catalogno','&character');
+insert into member values('&memberno','&fname','&lname','&address');
+insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+insert into videoforrent values('&videono','&available','&catalogno','&branchno');
+insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono');
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S1500
+Enter value for name: Tom Daniels
+Enter value for position: Manager
+Enter value for salary: 46000
+Enter value for branchno: B001
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S1500','Tom Daniels','Manager',46000,'B001')
+
+1 row created.
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S0003
+Enter value for name: Sally Adams
+Enter value for position: Assistant
+Enter value for salary: 30000
+Enter value for branchno: B001
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S0003','Sally Adams','Assistant',30000,'B001')
+
+1 row created.
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S0010
+Enter value for name: Mary Martinez
+Enter value for position: Manager
+Enter value for salary: 50000
+Enter value for branchno: B002
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S0010','Mary Martinez','Manager',50000,'B002')
+
+1 row created.
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S3250
+Enter value for name: Robert Chin
+Enter value for position: Superisor
+Enter value for salary: 32000
+Enter value for branchno: B002
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S3250','Robert Chin','Superisor',32000,'B002')
+
+1 row created.
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S2250
+Enter value for name: Sally Stern
+Enter value for position: Manager
+Enter value for salary: 48000
+Enter value for branchno: B004
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S2250','Sally Stern','Manager',48000,'B004')
+
+1 row created.
+
+SQL> insert into staff values('&staffno','&name','&position',&salary,'&branchno');
+Enter value for staffno: S0415
+Enter value for name: Art Peters
+Enter value for position: Manager
+Enter value for salary: 41000
+Enter value for branchno: B003
+old   1: insert into staff values('&staffno','&name','&position',&salary,'&branchno')
+new   1: insert into staff values('S0415','Art Peters','Manager',41000,'B003')
+
+1 row created.
+
+SQL> select * from staff;
+
+STAFF NAME
+----- ----------------------------------------
+POSITION                                     SALARY BRAN
+---------------------------------------- ---------- ----
+S1500 Tom Daniels
+Manager                                       46000 B001
+
+S0003 Sally Adams
+Assistant                                     30000 B001
+
+S0010 Mary Martinez
+Manager                                       50000 B002
+
+
+STAFF NAME
+----- ----------------------------------------
+POSITION                                     SALARY BRAN
+---------------------------------------- ---------- ----
+S3250 Robert Chin
+Superisor                                     32000 B002
+
+S2250 Sally Stern
+Manager                                       48000 B004
+
+S0415 Art Peters
+Manager                                       41000 B003
+
+
+6 rows selected.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno');
+Enter value for branchno: B001
+Enter value for street: 8 Jefferson Way
+Enter value for city: Portland
+Enter value for state: OR
+Enter value for zipcode: 97201
+Enter value for mgrstaffno: S1500
+old   1: insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno')
+new   1: insert into branch values('B001','8 Jefferson Way','Portland','OR','97201','S1500')
+
+1 row created.
+
+SQL> insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno');
+Enter value for branchno: B002
+Enter value for street: City Center Plaza
+Enter value for city: Seattle
+Enter value for state: WA
+Enter value for zipcode: 98122
+Enter value for mgrstaffno: S0010
+old   1: insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno')
+new   1: insert into branch values('B002','City Center Plaza','Seattle','WA','98122','S0010')
+
+1 row created.
+
+SQL> insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno');
+Enter value for branchno: B003
+Enter value for street: 14 - 8th Avenue
+Enter value for city: New Yokrk
+Enter value for state: NY
+Enter value for zipcode: 10012
+Enter value for mgrstaffno: S0415
+old   1: insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno')
+new   1: insert into branch values('B003','14 - 8th Avenue','New Yokrk','NY','10012','S0415')
+
+1 row created.
+
+SQL> insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno');
+Enter value for branchno: B004
+Enter value for street: 16 - 14th Avenue
+Enter value for city: Seattle
+Enter value for state: WA
+Enter value for zipcode: 98128
+Enter value for mgrstaffno: S2250
+old   1: insert into branch values('&branchno','&street','&city','&state','&zipcode','&mgrstaffno')
+new   1: insert into branch values('B004','16 - 14th Avenue','Seattle','WA','98128','S2250')
+
+1 row created.
+
+SQL> select * from branch;
+
+BRAN STREET                         CITY                 ST ZIPCO MGRST
+---- ------------------------------ -------------------- -- ----- -----
+B001 8 Jefferson Way                Portland             OR 97201 S1500
+B002 City Center Plaza              Seattle              WA 98122 S0010
+B003 14 - 8th Avenue                New Yokrk            NY 10012 S0415
+B004 16 - 14th Avenue               Seattle              WA 98128 S2250
+
+------------------------------------------------------------------------------------------------------------------------------------------
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D1001
+Enter value for directorname: Lee Tamahori
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D1001','Lee Tamahori')
+
+1 row created.
+
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D7834
+Enter value for directorname: Chris Columbus
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D7834','Chris Columbus')
+
+1 row created.
+
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D4576
+Enter value for directorname: Peter Jackson
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D4576','Peter Jackson')
+
+1 row created.
+
+SQL> D0078
+SP2-0042: unknown command "D0078" - rest of line ignored.
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D0078
+Enter value for directorname: Andrew Anderson
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D0078','Andrew Anderson')
+
+1 row created.
+
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D5743
+Enter value for directorname: Barry Sonnenfeld
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D5743','Barry Sonnenfeld')
+
+1 row created.
+
+SQL> insert into director values('&directorno','&directorName');
+Enter value for directorno: D3765
+Enter value for directorname: Rolnd Emmerick
+old   1: insert into director values('&directorno','&directorName')
+new   1: insert into director values('D3765','Rolnd Emmerick')
+
+1 row created.
+
+SQL> select * from director;
+
+DIREC DIRECTORNAME
+----- ------------------------------
+D1001 Lee Tamahori
+D7834 Chris Columbus
+D4576 Peter Jackson
+D0078 Andrew Anderson
+D5743 Barry Sonnenfeld
+D3765 Rolnd Emmerick
+
+6 rows selected.
+
+SQL> update director set directorname='Andrew Adamson' where directorno=D0078;
+update director set directorname='Andrew Adamson' where directorno=D0078
+                                                                   *
+ERROR at line 1:
+ORA-00904: "D0078": invalid identifier
+
+
+SQL> update director set directorname='Andrew Adamson' where directorno='D0078';
+
+1 row updated.
+
+SQL> update director set directorname='Roland Emmerick' where directorno='D3765';
+
+1 row updated.
+
+SQL> select * from director;
+
+DIREC DIRECTORNAME
+----- ------------------------------
+D1001 Lee Tamahori
+D7834 Chris Columbus
+D4576 Peter Jackson
+D0078 Andrew Adamson
+D5743 Barry Sonnenfeld
+D3765 Roland Emmerick
+
+6 rows selected.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 207132
+Enter value for title: Die Another Day
+Enter value for category: Action
+Enter value for dailyrental: 5.00
+Enter value for price: 21.99
+Enter value for directorno: D1001
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('207132','Die Another Day','Action','5.00',21.99,'D1001')
+
+1 row created.
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 902355
+Enter value for title: Harry Porter
+Enter value for category: Children
+Enter value for dailyrental: 4.50
+Enter value for price: 14.50
+Enter value for directorno: D7834
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('902355','Harry Porter','Children','4.50',14.50,'D7834')
+
+1 row created.
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 330553
+Enter value for title: Lord of the Rings
+Enter value for category: Fantasy
+Enter value for dailyrental: 5.00
+Enter value for price: 31.99
+Enter value for directorno: D4576
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('330553','Lord of the Rings','Fantasy','5.00',31.99,'D4576')
+
+1 row created.
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 781132
+Enter value for title: Shrek
+Enter value for category: Children
+Enter value for dailyrental: 4.00
+Enter value for price: 18.50
+Enter value for directorno: D0078
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('781132','Shrek','Children','4.00',18.50,'D0078')
+
+1 row created.
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 445624
+Enter value for title: Men in Black II
+Enter value for category: Action
+Enter value for dailyrental: 4.00
+Enter value for price: 29.99
+Enter value for directorno: D5743
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('445624','Men in Black II','Action','4.00',29.99,'D5743')
+
+1 row created.
+
+SQL> insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno');
+Enter value for catalogno: 634817
+Enter value for title: Independence Day
+Enter value for category: Sci-Fi
+Enter value for dailyrental: 4.50
+Enter value for price: 32.99
+Enter value for directorno: D3765
+old   1: insert into video values('&catalogno','&title','&category','&dailyrental',&price,'&directorno')
+new   1: insert into video values('634817','Independence Day','Sci-Fi','4.50',32.99,'D3765')
+
+1 row created.
+
+SQL> select * from video;
+
+CATALO TITLE                                    CATEGORY   DAILYRENTAL
+------ ---------------------------------------- ---------- -----------
+     PRICE DIREC
+---------- -----
+207132 Die Another Day                          Action               5
+     21.99 D1001
+
+902355 Harry Porter                             Children           4.5
+      14.5 D7834
+
+330553 Lord of the Rings                        Fantasy              5
+     31.99 D4576
+
+
+CATALO TITLE                                    CATEGORY   DAILYRENTAL
+------ ---------------------------------------- ---------- -----------
+     PRICE DIREC
+---------- -----
+781132 Shrek                                    Children             4
+      18.5 D0078
+
+445624 Men in Black II                          Action               4
+     29.99 D5743
+
+634817 Independence Day                         Sci-Fi             4.5
+     32.99 D3765
+
+
+6 rows selected.
+------------------------------------------------------------------------------------------------------------------------------------------------
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A1002
+Enter value for actorname: Pierce Brosnan
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A1002','Pierce Brosnan')
+
+1 row created.
+
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A3006
+Enter value for actorname: Elijah Wood
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A3006','Elijah Wood')
+
+1 row created.
+
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A2019
+Enter value for actorname: Will Smith
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A2019','Will Smith')
+
+1 row created.
+
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A7525
+Enter value for actorname: Tommy Lee Jones
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A7525','Tommy Lee Jones')
+
+1 row created.
+
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A4343
+Enter value for actorname: Mike Myers
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A4343','Mike Myers')
+
+1 row created.
+
+SQL> insert into actor values('&actorno','&actorname');
+Enter value for actorno: A8401
+Enter value for actorname: Daniel Radcliffe
+old   1: insert into actor values('&actorno','&actorname')
+new   1: insert into actor values('A8401','Daniel Radcliffe')
+
+1 row created.
+
+SQL> select * from actor;
+
+ACTOR ACTORNAME
+----- ----------------------------------------
+A1002 Pierce Brosnan
+A3006 Elijah Wood
+A2019 Will Smith
+A7525 Tommy Lee Jones
+A4343 Mike Myers
+A8401 Daniel Radcliffe
+
+6 rows selected.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A1002
+Enter value for catalogno: 207132
+Enter value for character: James Bond
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A1002','207132','James Bond')
+
+1 row created.
+
+SQL>
+SQL> A3006
+  1* insert into role values('&actorno','&catalogno','&character')3006
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A3006
+Enter value for catalogno: 330553
+Enter value for character: Frodo Baggins
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A3006','330553','Frodo Baggins')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A3006
+Enter value for catalogno: 902355
+Enter value for character: Harry Porter
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A3006','902355','Harry Porter')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A2019
+Enter value for catalogno: 634817
+Enter value for character: Captain Steve Hiller
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A2019','634817','Captain Steve Hiller')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A2019
+Enter value for catalogno: 445624
+Enter value for character: Agent J
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A2019','445624','Agent J')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A7525
+Enter value for catalogno: 445624
+Enter value for character: Agent K
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A7525','445624','Agent K')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A4343
+Enter value for catalogno: 781132
+Enter value for character: Shrek
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A4343','781132','Shrek')
+
+1 row created.
+
+SQL> select * from role;
+
+ACTOR CATALO CHARACTER
+----- ------ ----------------------------------------
+A1002 207132 James Bond
+A3006 330553 Frodo Baggins
+A3006 902355 Harry Porter
+A2019 634817 Captain Steve Hiller
+A2019 445624 Agent J
+A7525 445624 Agent K
+A4343 781132 Shrek
+
+7 rows selected.
+---------------------------------------------------------------------------------------------------------------------------------
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A1002
+Enter value for catalogno: 207132
+Enter value for character: James Bond
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A1002','207132','James Bond')
+
+1 row created.
+
+SQL>
+SQL> A3006
+  1* insert into role values('&actorno','&catalogno','&character')3006
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A3006
+Enter value for catalogno: 330553
+Enter value for character: Frodo Baggins
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A3006','330553','Frodo Baggins')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A3006
+Enter value for catalogno: 902355
+Enter value for character: Harry Porter
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A3006','902355','Harry Porter')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A2019
+Enter value for catalogno: 634817
+Enter value for character: Captain Steve Hiller
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A2019','634817','Captain Steve Hiller')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A2019
+Enter value for catalogno: 445624
+Enter value for character: Agent J
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A2019','445624','Agent J')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A7525
+Enter value for catalogno: 445624
+Enter value for character: Agent K
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A7525','445624','Agent K')
+
+1 row created.
+
+SQL> insert into role values('&actorno','&catalogno','&character');
+Enter value for actorno: A4343
+Enter value for catalogno: 781132
+Enter value for character: Shrek
+old   1: insert into role values('&actorno','&catalogno','&character')
+new   1: insert into role values('A4343','781132','Shrek')
+
+1 row created.
+
+SQL> select * from role;
+
+ACTOR CATALO CHARACTER
+----- ------ ----------------------------------------
+A1002 207132 James Bond
+A3006 330553 Frodo Baggins
+A3006 902355 Harry Porter
+A2019 634817 Captain Steve Hiller
+A2019 445624 Agent J
+A7525 445624 Agent K
+A4343 781132 Shrek
+
+7 rows selected.
+
+SQL> insert into member values('&memberno','&fname','&lname','&address');
+Enter value for memberno: M250178
+Enter value for fname: Bob
+Enter value for lname: Adams
+Enter value for address: 57 - 11th Avenue, Seattle, WA 98105
+old   1: insert into member values('&memberno','&fname','&lname','&address')
+new   1: insert into member values('M250178','Bob','Adams','57 - 11th Avenue, Seattle, WA 98105')
+
+1 row created.
+
+SQL> insert into member values('&memberno','&fname','&lname','&address');
+Enter value for memberno: M166884
+Enter value for fname: Art
+Enter value for lname: Peters
+Enter value for address: 89 Redmond Rd, Portland, OR 97117
+old   1: insert into member values('&memberno','&fname','&lname','&address')
+new   1: insert into member values('M166884','Art','Peters','89 Redmond Rd, Portland, OR 97117')
+
+1 row created.
+
+SQL> insert into member values('&memberno','&fname','&lname','&address');
+Enter value for memberno: M115656
+Enter value for fname: Serena
+Enter value for lname: Prker
+Enter value for address: 22 W.Capital Way, Portland, OR 97201
+old   1: insert into member values('&memberno','&fname','&lname','&address')
+new   1: insert into member values('M115656','Serena','Prker','22 W.Capital Way, Portland, OR 97201')
+
+1 row created.
+
+SQL> update member set lname='Parker' where memberno=M115656;
+update member set lname='Parker' where memberno=M115656
+                                                *
+ERROR at line 1:
+ORA-00904: "M115656": invalid identifier
+
+
+SQL> update member set lname='Parker' where memberno='M115656';
+
+1 row updated.
+
+SQL> insert into member values('&memberno','&fname','&lname','&address');
+Enter value for memberno: M284354
+Enter value for fname: Don
+Enter value for lname: Nelson
+Enter value for address: 123 Suffolk Lane, Seattle, WA 98117
+old   1: insert into member values('&memberno','&fname','&lname','&address')
+new   1: insert into member values('M284354','Don','Nelson','123 Suffolk Lane, Seattle, WA 98117')
+
+1 row created.
+
+SQL> select * from member;
+
+MEMBERN FNAME
+------- ----------------------------------------
+LNAME
+----------------------------------------
+ADDRESS
+----------------------------------------
+M250178 Bob
+Adams
+57 - 11th Avenue, Seattle, WA 98105
+
+M166884 Art
+Peters
+89 Redmond Rd, Portland, OR 97117
+
+MEMBERN FNAME
+------- ----------------------------------------
+LNAME
+----------------------------------------
+ADDRESS
+----------------------------------------
+
+M115656 Serena
+Parker
+22 W.Capital Way, Portland, OR 97201
+
+M284354 Don
+Nelson
+
+MEMBERN FNAME
+------- ----------------------------------------
+LNAME
+----------------------------------------
+ADDRESS
+----------------------------------------
+123 Suffolk Lane, Seattle, WA 98117
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+Enter value for branchno: B002
+Enter value for memberno: M250178
+Enter value for staffno: S3250
+Enter value for datejoined: 1-Jul-01
+old   1: insert into registration values('&branchno','&memberno','&staffno','&dateJoined')
+new   1: insert into registration values('B002','M250178','S3250','1-Jul-01')
+
+1 row created.
+
+SQL> insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+Enter value for branchno: B001
+Enter value for memberno: M166884
+Enter value for staffno: S003
+Enter value for datejoined: ;
+old   1: insert into registration values('&branchno','&memberno','&staffno','&dateJoined')
+new   1: insert into registration values('B001','M166884','S003',';')
+insert into registration values('B001','M166884','S003',';')
+                                                        *
+ERROR at line 1:
+ORA-01858: a non-numeric character was found where a numeric was expected
+
+
+SQL> insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+Enter value for branchno: B001
+Enter value for memberno: M166884
+Enter value for staffno: S0003
+Enter value for datejoined: 4-Sep-02
+old   1: insert into registration values('&branchno','&memberno','&staffno','&dateJoined')
+new   1: insert into registration values('B001','M166884','S0003','4-Sep-02')
+
+1 row created.
+
+SQL> insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+Enter value for branchno: B001
+Enter value for memberno: M115656
+Enter value for staffno: S0003
+Enter value for datejoined: 12-May-00
+old   1: insert into registration values('&branchno','&memberno','&staffno','&dateJoined')
+new   1: insert into registration values('B001','M115656','S0003','12-May-00')
+
+1 row created.
+
+SQL> insert into registration values('&branchno','&memberno','&staffno','&dateJoined');
+Enter value for branchno: B002
+Enter value for memberno: M284354
+Enter value for staffno: S3250
+Enter value for datejoined: 9-Oct-01
+old   1: insert into registration values('&branchno','&memberno','&staffno','&dateJoined')
+new   1: insert into registration values('B002','M284354','S3250','9-Oct-01')
+
+1 row created.
+
+SQL> select * from registration;
+
+BRAN MEMBERN STAFF DATEJOINE
+---- ------- ----- ---------
+B002 M250178 S3250 01-JUL-01
+B001 M166884 S0003 04-SEP-02
+B001 M115656 S0003 12-MAY-00
+B002 M284354 S3250 09-OCT-01
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL> insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono');
+Enter value for rentalno: R753461
+Enter value for dateout: 4-Feb-03
+Enter value for datereturn: 6-Feb-03
+Enter value for memberno: M284354
+Enter value for videono: 245456
+old   1: insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono')
+new   1: insert into rentalagreement values('R753461','4-Feb-03','6-Feb-03','M284354','245456')
+
+1 row created.
+
+SQL> insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono');
+Enter value for rentalno: R753462
+Enter value for dateout: 4-Feb-03
+Enter value for datereturn: 6-Feb-03
+Enter value for memberno: M284354
+Enter value for videono: 243431
+old   1: insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono')
+new   1: insert into rentalagreement values('R753462','4-Feb-03','6-Feb-03','M284354','243431')
+
+1 row created.
+
+SQL> insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono');
+Enter value for rentalno: R668256
+Enter value for dateout: 5-Feb-03
+Enter value for datereturn: 7-feb-03
+Enter value for memberno: M115656
+Enter value for videono: 199004
+old   1: insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono')
+new   1: insert into rentalagreement values('R668256','5-Feb-03','7-feb-03','M115656','199004')
+
+1 row created.
+
+SQL> insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono');
+Enter value for rentalno: R668189
+Enter value for dateout: 2-feb-03
+Enter value for datereturn: 7-feb-03
+Enter value for memberno: M115656
+Enter value for videono: 178643
+old   1: insert into rentalagreement values('&rentalno','&dateout','&datereturn','&memberno','&videono')
+new   1: insert into rentalagreement values('R668189','2-feb-03','7-feb-03','M115656','178643')
+
+1 row created.
+
+SQL> select * from rentalagreement;
+
+RENTALN DATEOUT   DATERETUR MEMBERN    VIDEONO
+------- --------- --------- ------- ----------
+R753461 04-FEB-03 06-FEB-03 M284354     245456
+R753462 04-FEB-03 06-FEB-03 M284354     243431
+R668256 05-FEB-03 07-FEB-03 M115656     199004
+R668189 02-FEB-03 07-FEB-03 M115656     178643
