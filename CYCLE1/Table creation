@@ -1,0 +1,67 @@
+create table branch
+(branchno char(4) primary key not null check(branchno like 'B%'),
+street varchar(30) not null,
+city varchar(20) not null,
+state char(2) not null,
+zipcode char(5) not null unique,
+mgrstaffno varchar(5) not null);
+
+create table director(
+directorno char(5) primary key not null check(directorno like 'D%'),
+directorname varchar(30) not null);
+
+create table video
+( catalogno char(6) primary key not null,
+title varchar(40) not null,
+category varchar(10) not null,
+dailyrental decimal(4,2) default 5.00 not null,
+price decimal(4,2),
+directorno char(5) not null references Director(directorno));
+
+create table staff 
+(staffno varchar(5) primary key not null check(staffno like 'S%'),
+name varchar(40) not null,
+position varchar(40) not null,
+salary number(5) not null,
+branchno char(4) not null);
+
+alter table branch add constraint branchfk foreign key(mgrstaffno) references staff(staffno);
+
+create table actor 
+(actorno varchar(5) primary key not null check(actorno like 'A%'),
+actorname varchar(40) not null);
+
+create table role 
+( actorno varchar(5) not null check(actorno like 'A%'),
+catalogno char(6) not null,
+character varchar(40) not null);
+
+alter table role add constraint roleck primary key(actorno,catalogno);
+
+create table member 
+(memberno varchar(7) primary key not null check(memberno like 'M%'),
+fname varchar(40) not null,
+lname varchar(40) not null,
+address varchar(40) not null);
+
+create table registration 
+(branchno char(4) not null check(branchno like 'B%'),
+memberno varchar(7) not null check(memberno like 'M%'),
+staffno varchar(5) not null references staff(staffno),
+datejoined date not null,
+Primary key(branchno,memberno));
+
+create table rentalagreement
+( rentalno varchar(7) primary key not null check(rentalno like 'R%'),
+dateout date not null,
+datereturn date not null);
+
+create table videoforrent
+(videono number(6) primary key not null,
+available char(1) default 'N' check(available='Y' or available='N'),
+catalogno char(6) not null references video(catalogno),
+branchno char(4) not null check(branchno like'B%') references branch(branchno));
+
+alter table rentalagreement add(
+memberno varchar(7) not  null check(memberno like'M%') references member(memberno),
+videono number(6) not null references videoforrent(videono));
